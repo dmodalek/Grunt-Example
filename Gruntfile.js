@@ -2,7 +2,7 @@
 
 module.exports = function (grunt) {
 
-	// Dynamically load npm tasks
+	// Dynamically load npm tasks, instead of adding each plugin manually
 
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
@@ -10,13 +10,14 @@ module.exports = function (grunt) {
 
 		pkg: grunt.file.readJSON('package.json'),
 
-		// Banner
+		// Banner to be prepended before generated files
 
 		banner: '\n/*\n * Generated with Grunt on <%= grunt.template.today("dd.mm.yyyy") %> at <%= grunt.template.today("H:MM:ss") %>\n */\n',
 
 		///////////////////////////////////////////////////////////
 
 		/*
+		 * Create a .less file including @imports for all .less files
 		 * https://github.com/MarcDiethelm/grunt-less-imports
 		 */
 
@@ -28,6 +29,7 @@ module.exports = function (grunt) {
 		},
 
 		/*
+		 * Compile Less to CSS
 		 * https://github.com/gruntjs/grunt-contrib-less
 		 */
 
@@ -44,6 +46,7 @@ module.exports = function (grunt) {
 		},
 
 		/*
+		 * Add vendor prefixes to CSS3 selectors
 		 * https://github.com/nDmitry/grunt-autoprefixer
 		 */
 
@@ -58,6 +61,7 @@ module.exports = function (grunt) {
 		},
 
 		/*
+		 * Minify CSS
 		 * https://github.com/gruntjs/grunt-contrib-cssmin
 		 */
 
@@ -73,6 +77,7 @@ module.exports = function (grunt) {
 		},
 
 		/*
+		 * Validate Javascript files
 		 * https://github.com/gruntjs/grunt-contrib-jshint
 		 */
 
@@ -90,6 +95,7 @@ module.exports = function (grunt) {
 		},
 
 		/*
+		 * Concatinate and minify Javascript files
 		 * https://github.com/gruntjs/grunt-contrib-uglify
 		 */
 
@@ -123,6 +129,7 @@ module.exports = function (grunt) {
 		},
 
 		/*
+		 * Delete unused files
 		 * https://github.com/gruntjs/grunt-contrib-clean
 		 */
 
@@ -131,6 +138,11 @@ module.exports = function (grunt) {
 		},
 
 		///////////////////////////////////////////////////////////
+
+		/*
+		 * Watch Folders and run build process on changes
+		 * https://github.com/gruntjs/grunt-contrib-watch
+		 */
 
 		watch: {
 			scripts: {
