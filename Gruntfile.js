@@ -163,7 +163,6 @@ module.exports = function (grunt) {
 	grunt.registerTask('default', [
 		'styles',
 		'scripts',
-		'clean',
 		'watch'
 	]);
 
@@ -179,7 +178,8 @@ module.exports = function (grunt) {
 	grunt.registerTask('styles', [
 		'less_imports',
 		'less',
-		'autoprefixer'
+		'autoprefixer',
+		'clean'
 	]);
 
 	grunt.registerTask('scripts', [
