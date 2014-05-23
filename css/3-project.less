@@ -1,0 +1,32 @@
+/**
+ * Global Elements
+ */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;;
+	padding: @spacing;
+	margin: 0;
+	overflow: hidden;
+	color: @color-copy;
+
+}
+
+/*
+ * Links
+ */
+
+a {
+	&,
+	&:active,
+	&:focus {
+		color: @color-link;
+		text-decoration: none;
+	}
+	&:hover {
+		text-decoration: underline;
+	}
+}

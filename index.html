@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="de-DE">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+
+		<title>Grunt Kickstart</title>
+
+		<!-- CSS !-->
+		<link href="built/styles.css" rel="stylesheet">
+
+		<!-- Live Reload !-->
+		<script>document.write(\'<script src="http://\' + (location.host || \'localhost\').split(\':\')[0] + \':35729/livereload.js?snipver=1"></\' + \'script>\')</script>
+	</head>
+	<body class="mod mod-layout <?= (APP_ENV == 'dev' ? 'skin-layout-dev ' : '') ?>">
+
+		<div class="site-wrapper">
+
+			<div class="site-main" role="main">
+
+				<h1>Grunt Example</h1>
+
+				<p>See <a href="http://frontend.namics.com/2014/05/22/frontend-build-prozess-mit-grunt">this blog post</a> for more infos about this example project.</p>
+			</div>
+		</div>
+
+		<!-- Footer Javascript !-->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="built/scripts.js"></script>
+	</body>
+</html>
